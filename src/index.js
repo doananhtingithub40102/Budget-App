@@ -13,7 +13,7 @@ export default function App() {
     <HashRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route path='Budget-App' element={<Hangngay />} />
+          <Route index element={<Hangngay />} />
           <Route path="hutaichinh" element={<HuTaichinh />} />
           <Route path="thongke" element={<Thongke />} />
           <Route path="caidat" element={<Caidat />} />
