@@ -13,7 +13,7 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<Hangngay />} />
+          <Route path='Budget-App' element={<Hangngay />} />
           <Route path="hutaichinh" element={<HuTaichinh />} />
           <Route path="thongke" element={<Thongke />} />
           <Route path="caidat" element={<Caidat />} />

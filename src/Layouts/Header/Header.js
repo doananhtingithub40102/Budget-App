@@ -30,7 +30,7 @@ const Header = () => {
             <nav>
                 <ul className="nav">
                     <li className="nav-item" style={{ backgroundColor: bgColorNavItem.hangNgay }}>
-                        <Link className="nav-link text-white" onClick={() => setBgColorNavItem({ hangNgay: "#7970de", huTaiChinh: "", thongKe: "", catDat: "" })} to="/">
+                        <Link className="nav-link text-white" onClick={() => setBgColorNavItem({ hangNgay: "#7970de", huTaiChinh: "", thongKe: "", catDat: "" })} to="/Budget-App">
                             <img src={logo} width="30" alt="hangNgay" />
                             <span className="ms-1">Hàng ngày</span>
                         </Link>
