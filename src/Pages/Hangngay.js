@@ -27,7 +27,7 @@ const Hangngay = () => {
     })
     const [cacGiaoDich, setCacGiaoDich] = useState([])
     useEffect(() => {
-        fetch("https://doananhtingithub40102.github.io/HOTRO_HOCTAP_TRUCTUYEN/data.json").then(function (response) { return response.json() })
+        fetch("https://doananhtingithub40102.github.io/MyData/budget-app/data.json").then(function (response) { return response.json() })
             .then(function (json) { setCacGiaoDich(json) })
             .catch(function (error) { console.log(error) });
     }, [])
