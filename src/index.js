@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Layout from './Pages/Layout'
 import Hangngay from './Pages/Hangngay'
 import HuTaichinh from './Pages/HuTaichinh'
@@ -10,7 +10,7 @@ import NoPage from './Pages/NoPage'
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path='Budget-App' element={<Hangngay />} />
@@ -20,7 +20,7 @@ export default function App() {
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
