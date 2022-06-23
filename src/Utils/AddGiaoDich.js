@@ -10,20 +10,45 @@ const AddGiaoDich = (cacGiaoDich, form) => {
         moTa: form.moTa
     }
     let allGiaoDich = []
-    let giaoDich = {}
-    let isTonTaiNgayGD = false
+    let isSetted = false
+
+    if (new Date(ngay).getTime() > new Date(cacGiaoDich[0].ngay).getTime()) {
+        const giaoDich = {
+            ngay: ngay,
+            giaoDich: [myGiaoDich],
+            tongThuNhap: 0,
+            tongChiTieu: myGiaoDich.soTien
+        }
+        allGiaoDich = [giaoDich, ...cacGiaoDich]
+        return allGiaoDich
+    }
 
     for (let i = 0; i < cacGiaoDich.length; i++) {
-        if (cacGiaoDich[i].ngay === ngay) {
-            isTonTaiNgayGD = true
+        if (ngay === cacGiaoDich[i].ngay) {
+            isSetted = true
             cacGiaoDich[i].giaoDich.push(myGiaoDich)
             cacGiaoDich[i].tongChiTieu = TongCongGiaoDichNgay(cacGiaoDich, ngay)
             allGiaoDich = [...cacGiaoDich]
             break
         }
+        if (cacGiaoDich[i + 1] !== undefined){
+            if (new Date(ngay).getTime() < new Date(cacGiaoDich[i].ngay).getTime() && new Date(ngay).getTime() > new Date(cacGiaoDich[i + 1].ngay).getTime()){
+                isSetted = true
+                const giaoDich = {
+                    ngay: ngay,
+                    giaoDich: [myGiaoDich],
+                    tongThuNhap: 0,
+                    tongChiTieu: myGiaoDich.soTien
+                }
+                cacGiaoDich.splice((i + 1), 0, giaoDich)
+                allGiaoDich = [...cacGiaoDich]
+                break
+            }
+        }
     }
-    if (!isTonTaiNgayGD) {
-        giaoDich = {
+
+    if (!isSetted) {
+        const giaoDich = {
             ngay: ngay,
             giaoDich: [myGiaoDich],
             tongThuNhap: 0,
