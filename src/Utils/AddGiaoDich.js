@@ -26,7 +26,7 @@ const AddGiaoDich = (cacGiaoDich, form) => {
     for (let i = 0; i < cacGiaoDich.length; i++) {
         if (ngay === cacGiaoDich[i].ngay) {
             isSetted = true
-            cacGiaoDich[i].giaoDich.push(myGiaoDich)
+            cacGiaoDich[i].giaoDich.unshift(myGiaoDich)
             cacGiaoDich[i].tongChiTieu = TongCongGiaoDichNgay(cacGiaoDich, ngay)
             allGiaoDich = [...cacGiaoDich]
             break
