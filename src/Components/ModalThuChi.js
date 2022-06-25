@@ -8,7 +8,7 @@ import { ArrDateValueFormat } from "../Utils/DateFormat";
 import { kiemTraDuLieuHopLe } from "../Utils/HandleForm"
 import { CacGiaoDich } from "../Pages/Hangngay"
 import { useContext } from "react"
-import AddGiaoDich from "../Utils/AddGiaoDich"
+import { AddGiaoDich } from "../Utils/HandleGiaoDich"
 
 export const ModalContext = createContext({
     form: {},
