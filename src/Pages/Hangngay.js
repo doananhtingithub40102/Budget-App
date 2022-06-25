@@ -5,6 +5,7 @@ import { Row } from "react-bootstrap"
 import ModalThuChi from "../Components/ModalThuChi"
 import { GiaoDichHangNgay } from "../Layouts/Main/Layout_GiaoDichHangNgay"
 import { createContext } from "react"
+import { SetGiaoDichThangNam } from "../Utils/HandleGiaoDich"
 
 export const CacGiaoDich = createContext({
     cacGiaoDich: [],
@@ -26,19 +27,60 @@ const Hangngay = () => {
         thang: "nav-link text-white-50",
     })
     const [cacGiaoDich, setCacGiaoDich] = useState([])
+    const [cacGiaoDichThangNam, setCacGiaoDichThangNam] = useState([])
     useEffect(() => {
         fetch("https://doananhtingithub40102.github.io/MyData/budget-app/data.json").then(function (response) { return response.json() })
-            .then(function (json) { setCacGiaoDich(json) })
-            .catch(function (error) { console.log(error) });
+        .then(function (json) {
+            setCacGiaoDich(json);
+            setCacGiaoDichThangNam(SetGiaoDichThangNam(json, thang, nam))
+        })
+        .catch(function (error) { console.log(error) });
     }, [])
+    
+    
+    const [thangNam, setThangNam] = useState({
+        "thang": thang,
+        "nam": nam
+    })
+    const handleThangNam = (operator) => {
+        if (operator === "-"){
+            if (thangNam.thang === 1){
+                setThangNam({
+                    "thang": 12,
+                    "nam": thangNam.nam - 1
+                })
+            } else {
+                setThangNam({
+                    "thang": thangNam.thang - 1,
+                    "nam": thangNam.nam
+                })
+            }
+        } else if (operator === "+") {
+            if (thangNam.thang === 12){
+                setThangNam({
+                    "thang": 1,
+                    "nam": thangNam.nam + 1
+                })
+            } else {
+                setThangNam({
+                    "thang": thangNam.thang + 1,
+                    "nam": thangNam.nam
+                })
+            }
+        }
+    }
+
+    useEffect(() => {
+        setCacGiaoDichThangNam(SetGiaoDichThangNam(cacGiaoDich, thangNam.thang, thangNam.nam))
+    }, [thangNam, cacGiaoDich])
     
     return (
         <CacGiaoDich.Provider value={{ cacGiaoDich, setCacGiaoDich }}>
             <main className="border-top pb-2">
                 <div className="mx-2 mt-2">
-                    <a href="/">{<FcPrevious />}</a>
-                    <span className="text-light">Tháng {thang} {nam}</span>
-                    <a href="/">{<FcNext />}</a>
+                    <span onClick={() => handleThangNam("-")} className="thangNam">{<FcPrevious />}</span>
+                    <span className="text-light">Tháng {thangNam.thang} {thangNam.nam}</span>
+                    <span onClick={() => handleThangNam("+")} className="thangNam">{<FcNext />}</span>
                 </div>
                 <Row className="border-bottom">
                     <nav className="col-md-6">
@@ -75,16 +117,17 @@ const Hangngay = () => {
                     </div>
                 </Row>
 
-                {cacGiaoDich.map((giaoDich, index) => {
+                {cacGiaoDichThangNam.map((giaoDich, index) => {
                     return (
                         index % 2 === 0 && (
                             <Row className="content" key={index}>
-                                <GiaoDichHangNgay props={cacGiaoDich[index]} />
-                                {cacGiaoDich[index + 1] !== undefined && <GiaoDichHangNgay props={cacGiaoDich[index + 1]} />}
+                                <GiaoDichHangNgay props={cacGiaoDichThangNam[index]} />
+                                {cacGiaoDichThangNam[index + 1] !== undefined && <GiaoDichHangNgay props={cacGiaoDichThangNam[index + 1]} />}
                             </Row>
                         )
                     )
                 })}
+                {cacGiaoDichThangNam.length === 0 && <span className="noGiaoDich">Không có giao dịch nào trong tháng</span>}
                 <ModalThuChi />
             </main>
         </CacGiaoDich.Provider>
