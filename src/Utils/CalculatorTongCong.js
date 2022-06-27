@@ -13,4 +13,14 @@ const TongCongGiaoDichNgay = (cacGiaoDich, ngayGiaoDich) => {
     return tongChiTieu
 }
 
-export { TongCongGiaoDichNgay }
+const TongCongGiaoDichThang = (cacGiaoDichThangNam) => {
+    let tongChiTieu = 0
+    
+    for (let i = 0; i < cacGiaoDichThangNam.length; i++) {
+        tongChiTieu += cacGiaoDichThangNam[i].tongChiTieu
+    }
+
+    return tongChiTieu
+}
+
+export { TongCongGiaoDichNgay, TongCongGiaoDichThang }

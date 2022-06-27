@@ -13,7 +13,11 @@ const FormatSoTien = (soTien) => {
         end = start
         start = end - 3
     }
-    soTienDaduocPhantach = arrHangtram.join("") + "đ"
+    if (arrHangtram.length !== 0){
+        soTienDaduocPhantach = arrHangtram.join("") + "đ"
+    } else {
+        soTienDaduocPhantach = 0
+    }
     return soTienDaduocPhantach
 }
 

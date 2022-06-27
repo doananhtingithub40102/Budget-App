@@ -6,6 +6,8 @@ import ModalThuChi from "../Components/ModalThuChi"
 import { GiaoDichHangNgay } from "../Layouts/Main/Layout_GiaoDichHangNgay"
 import { createContext } from "react"
 import { SetGiaoDichThangNam } from "../Utils/HandleGiaoDich"
+import { TongCongGiaoDichThang } from "../Utils/CalculatorTongCong"
+import { FormatSoTien } from "../Utils/NumberFormat"
 
 export const CacGiaoDich = createContext({
     cacGiaoDich: [],
@@ -20,6 +22,12 @@ const Hangngay = () => {
         tuan: "",
         thang: "",
     })
+
+    const [tongThuChiTheoThang, setTongThuChiTheoThang] = useState({
+        tongThu: 0,
+        tongChi: 0
+    })
+
     const [navLink, setStyleNavLink] = useState({
         hangNgay: "nav-link text-white-50",
         ngay: "nav-link text-white-50",
@@ -33,38 +41,42 @@ const Hangngay = () => {
         .then(function (json) {
             setCacGiaoDich(json);
             setCacGiaoDichThangNam(SetGiaoDichThangNam(json, thang, nam))
+            setTongThuChiTheoThang({
+                tongThu: 0,
+                tongChi: TongCongGiaoDichThang(SetGiaoDichThangNam(json, thang, nam))
+            })
         })
         .catch(function (error) { console.log(error) });
     }, [])
     
     
     const [thangNam, setThangNam] = useState({
-        "thang": thang,
-        "nam": nam
+        thang: thang,
+        nam: nam
     })
     const handleThangNam = (operator) => {
         if (operator === "-"){
             if (thangNam.thang === 1){
                 setThangNam({
-                    "thang": 12,
-                    "nam": thangNam.nam - 1
+                    thang: 12,
+                    nam: thangNam.nam - 1
                 })
             } else {
                 setThangNam({
-                    "thang": thangNam.thang - 1,
-                    "nam": thangNam.nam
+                    thang: thangNam.thang - 1,
+                    nam: thangNam.nam
                 })
             }
         } else if (operator === "+") {
             if (thangNam.thang === 12){
                 setThangNam({
-                    "thang": 1,
-                    "nam": thangNam.nam + 1
+                    thang: 1,
+                    nam: thangNam.nam + 1
                 })
             } else {
                 setThangNam({
-                    "thang": thangNam.thang + 1,
-                    "nam": thangNam.nam
+                    thang: thangNam.thang + 1,
+                    nam: thangNam.nam
                 })
             }
         }
@@ -72,6 +84,10 @@ const Hangngay = () => {
 
     useEffect(() => {
         setCacGiaoDichThangNam(SetGiaoDichThangNam(cacGiaoDich, thangNam.thang, thangNam.nam))
+        setTongThuChiTheoThang({
+            tongThu: 0,
+            tongChi: TongCongGiaoDichThang(SetGiaoDichThangNam(cacGiaoDich, thangNam.thang, thangNam.nam))
+        })
     }, [thangNam, cacGiaoDich])
     
     return (
@@ -103,15 +119,15 @@ const Hangngay = () => {
                         <Row className="mx-2">
                             <div className="col">
                                 <div className="text-white">Tổng thu nhập</div>
-                                <span className="text-info">3.500.000</span>
+                                <span className="text-info">{FormatSoTien(tongThuChiTheoThang.tongThu)}</span>
                             </div>
                             <div className="col">
                                 <div className="text-white">Tổng chi tiêu</div>
-                                <span className="text-danger">1.500.000</span>
+                                <span className="text-danger">{FormatSoTien(tongThuChiTheoThang.tongChi)}</span>
                             </div>
                             <div className="col">
                                 <div className="text-white">Còn lại</div>
-                                <span className="text-white-50">2.000.000</span>
+                                <span className="text-white-50">{FormatSoTien(tongThuChiTheoThang.tongThu - tongThuChiTheoThang.tongChi)}</span>
                             </div>
                         </Row>
                     </div>
