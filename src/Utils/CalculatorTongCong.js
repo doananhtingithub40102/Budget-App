@@ -17,7 +17,7 @@ const TongCongGiaoDichThang = (cacGiaoDichThangNam) => {
     let tongChiTieu = 0
     
     for (let i = 0; i < cacGiaoDichThangNam.length; i++) {
-        tongChiTieu += cacGiaoDichThangNam[i].tongChiTieu
+        tongChiTieu += eval(cacGiaoDichThangNam[i].tongChiTieu)
     }
 
     return tongChiTieu
