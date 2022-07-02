@@ -9,7 +9,6 @@ function xuLiDuLieuDate(date){
     $(".errorNgay").text("")
     return true
 }
-// errorMoTa
 
 function xuLiDuLieuTien(soTien){
     if (soTien === ""){
@@ -35,8 +34,20 @@ function xuLiDuLieuMoTa(moTa){
     return true
 }
 
+function xuLiSelectQuyChiTieu(){
+    if ($(".quyChiTieu").attr("hidden") === undefined){
+        if ($(".selectQuyChiTieu").val() === ""){
+            $(".errorQuyChiTieu").text("Vui lòng chọn quỹ chi tiêu")
+            return false
+        }
+        $(".errorQuyChiTieu").text("")
+    }
+
+    return true
+}
+
 function kiemTraDuLieuHopLe(data) {
-    if (xuLiDuLieuDate(data.date) && xuLiDuLieuTien(data.soTien) && xuLiDuLieuMoTa(data.moTa)){
+    if (xuLiDuLieuDate(data.date) && xuLiDuLieuTien(data.soTien) && xuLiDuLieuMoTa(data.moTa) && xuLiSelectQuyChiTieu()){
         return true
     }
     return false

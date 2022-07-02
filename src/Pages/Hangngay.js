@@ -40,11 +40,6 @@ const Hangngay = () => {
         fetch("https://doananhtingithub40102.github.io/MyData/budget-app/data.json").then(function (response) { return response.json() })
         .then(function (json) {
             setCacGiaoDich(json);
-            setCacGiaoDichThangNam(SetGiaoDichThangNam(json, thang, nam))
-            setTongThuChiTheoThang({
-                tongThu: 0,
-                tongChi: TongCongGiaoDichThang(SetGiaoDichThangNam(json, thang, nam))
-            })
         })
         .catch(function (error) { console.log(error) });
     }, [])
@@ -85,8 +80,8 @@ const Hangngay = () => {
     useEffect(() => {
         setCacGiaoDichThangNam(SetGiaoDichThangNam(cacGiaoDich, thangNam.thang, thangNam.nam))
         setTongThuChiTheoThang({
-            tongThu: 0,
-            tongChi: TongCongGiaoDichThang(SetGiaoDichThangNam(cacGiaoDich, thangNam.thang, thangNam.nam))
+            tongThu: TongCongGiaoDichThang(SetGiaoDichThangNam(cacGiaoDich, thangNam.thang, thangNam.nam))[0],
+            tongChi: TongCongGiaoDichThang(SetGiaoDichThangNam(cacGiaoDich, thangNam.thang, thangNam.nam))[1]
         })
     }, [thangNam, cacGiaoDich])
     

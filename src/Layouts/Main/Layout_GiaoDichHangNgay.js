@@ -11,7 +11,7 @@ const HeaderGiaoDich = ({ props_header }) => {
             </div>
             <div className="col-sm-6">
                 <Row className="mt-2">
-                    <span className="text-info col-sm-8 text-end">{props_header.tongThuNhap}</span>
+                    <span className="text-info col-sm-8 text-end">{FormatSoTien(props_header.tongThuNhap)}</span>
                     <span className="text-danger col-sm-4">{FormatSoTien(props_header.tongChiTieu)}</span>
                 </Row>
             </div>
@@ -30,8 +30,8 @@ const GiaoDich = ({ props_giaodich }) => {
             </div>
             <div className="col-sm-4">
                 <Row>
-                    <span className="text-info col-sm-6 text-end"></span>
-                    <span className="text-danger col-sm-6">{FormatSoTien(props_giaodich.soTien)}</span>
+                    <span className="text-info col-sm-6 text-end">{ props_giaodich.quyChiTieu === "" && props_giaodich.theLoai === "" && FormatSoTien(props_giaodich.soTien)}</span>
+                    <span className="text-danger col-sm-6">{props_giaodich.quyChiTieu !== "" && props_giaodich.theLoai !== "" && FormatSoTien(props_giaodich.soTien)}</span>
                 </Row>
             </div>
         </Row>

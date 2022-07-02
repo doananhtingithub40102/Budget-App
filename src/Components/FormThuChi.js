@@ -2,27 +2,30 @@ import Form from "react-bootstrap/Form";
 import { Row, Col } from "react-bootstrap"
 import { ModalContext } from "./ModalThuChi";
 import { KeyContext } from "./TabsThuChi";
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import { xuLiDuLieuDate } from "../Utils/HandleForm";
 import { xuLiDuLieuTien } from "../Utils/HandleForm";
 import { xuLiDuLieuMoTa } from "../Utils/HandleForm";
 import { TheLoaiContext } from "./ModalThuChi";
 
 const FormThuChi = () => {
-    let myColor = "#f97a7a"
-    let hidden = false
+    const [myColor, setMyColor] = useState("#f97a7a")
+    const [hidden, setHidden] = useState(false)
 
     const k = useContext(KeyContext)
 
     const modalContext = useContext(ModalContext)
     let { form, handleForm } = modalContext
 
-    if (k === "thuNhap") {
-        hidden = true
-        myColor = "#7cb9fe"
-        form.quyChiTieu = ""
-        form.theLoai = ""
-    }
+    useEffect(() => {
+        if (k === "thuNhap") {
+            setMyColor("#7cb9fe")
+            setHidden(true)
+        } else {
+            setMyColor("#f97a7a")
+            setHidden(false)
+        }
+    }, [k])
 
     const cacTheLoai = useContext(TheLoaiContext)
 
@@ -37,24 +40,27 @@ const FormThuChi = () => {
                     <span className="text-danger errorNgay"></span>
                 </Col>
             </Form.Group>
-            <Form.Group as={Row} className="mb-3" hidden={hidden}>
+            <Form.Group as={Row} className="mb-3 quyChiTieu" hidden={hidden}>
                 <Form.Label column sm="3" className="labelQuyChiTieu">
                     Quỹ chi tiêu
                 </Form.Label>
                 <Col sm="9">
-                    <Form.Select value={form.quyChiTieu} name="quyChiTieu" onChange={handleForm}>
+                    <Form.Select value={form.quyChiTieu} className="selectQuyChiTieu" name="quyChiTieu" onChange={handleForm}>
+                        <option value="">Quỹ chi tiêu</option>
                         <option value="Thiết yếu">Thiết yếu</option>
                         <option value="Hưởng thụ">Hưởng thụ</option>
                         <option value="Giáo dục">Giáo dục</option>
                     </Form.Select>
+                    <span className="text-danger errorQuyChiTieu"></span>
                 </Col>
             </Form.Group>
-            <Form.Group as={Row} className="mb-3" hidden={hidden}>
+            <Form.Group as={Row} className="mb-3 theLoai" hidden={hidden}>
                 <Form.Label column sm="3" className="labelTheLoai">
                     Thể loại
                 </Form.Label>
                 <Col sm="9">
                     <Form.Select value={form.theLoai} name="theLoai" onChange={handleForm}>
+                        <option value="" className="optionEmptyTheLoai">Thể loại</option>        
                         {cacTheLoai.map((theLoai, index) => <option key={index} value={theLoai}>{theLoai}</option>)}
                     </Form.Select>
                 </Col>
