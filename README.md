@@ -8,38 +8,33 @@
 
 **Budget App** là ứng dụng giúp việc quản lý tài chính cá nhân một cách toàn diện, vừa chi tiết, rõ ràng, dễ dàng sử dụng, vừa bao quát, tổng hợp theo nguyên tắc 6 hũ tài chính.
 
-### `npm start`
+#### `HŨ SỐ 1: THIẾT YẾU (55%)`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+HŨ THIẾT YẾU sử dụng cho các mục đích ăn uống, sinh hoạt, tiền phòng trọ, chi trả hóa đơn, điện nước, xăng xe và mua sắm cần thiết. Đây là hũ chiếm phần trăm thu nhập của bạn cao nhất.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### `HŨ SỐ 2: HƯỞNG THỤ (10%)`
 
-### `npm test`
+HŨ HƯỞNG THỤ bao gồm khoản tiền bạn dành cho việc hưởng thụ, mua sắm, giải trí, chăm lo cho bản thân, làm những việc mới mẻ, tăng cường trải nghiệm... Đây là quỹ giúp bạn có động lực để làm việc tốt hơn.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### `HŨ SỐ 3: GIÁO DỤC (10%)`
 
-### `npm run build`
+HŨ GIÁO DỤC được sử dụng để giúp bạn trao dồi kiến thức bản thân từ việc mua sách, tham gia các khóa học, đào tạo, các buổi gặp gỡ chia sẻ từ những người thành công. Đây là quỹ giúp bạn không ngừng phát triển năng lực bản thân, từ đó có thể tạo ra nhiều thu nhập hơn.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### `HŨ SỐ 4: TIẾT KIỆM DÀI HẠN (10%)`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+HŨ TIẾT KIỆM DÀI HẠN được sử dụng cho những mục tiêu dài hạn, lớn hạn như mua xe, mua nhà, sinh em bé, thực hiện ước mơ... Đây là quỹ giúp bạn tiết kiệm dài hạn để đạt được những mục tiêu trong cuộc sống.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### `HŨ SỐ 5: TỰ DO TÀI CHÍNH (10%)`
 
-### `npm run eject`
+HŨ TỰ DO TÀI CHÍNH là khoản tiền bạn sử dụng để tham gia các hoạt động tạo ra thu nhập thụ động như gửi tiết kiệm, đầu tư, góp vốn kinh doanh... Đây là quỹ giúp bạn tạo ra "con ngỗng" đẻ trứng vàng để sử dụng khi không còn làm việc.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### `HŨ SỐ 6: TỪ THIỆN (5%)`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+HŨ TỪ THIỆN là khoản tiền bạn sử dụng để làm từ thiện, giúp đỡ cộng đồng, người thân, bạn bè.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Hãy Cho Đi, Bạn Sẽ Nhận Được Nhiều Hơn Thế! 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Tính năng
 
 ## Learn More
 
