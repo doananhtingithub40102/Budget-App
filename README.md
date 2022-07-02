@@ -1,10 +1,12 @@
-# Getting Started with Create React App
+# Budget App - Ứng dụng quản lý tài chính
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+*Dự án này được khởi tạo bằng [Create React App](https://github.com/facebook/create-react-app)*.
 
-## Available Scripts
+## Thông tin về ứng dụng này
 
-In the project directory, you can run:
+### Giới thiệu chung
+
+**Budget App** là ứng dụng giúp việc quản lý tài chính cá nhân một cách toàn diện, vừa chi tiết, rõ ràng, dễ dàng sử dụng, vừa bao quát, tổng hợp theo nguyên tắc 6 hũ tài chính.
 
 ### `npm start`
 
