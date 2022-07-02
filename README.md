@@ -40,11 +40,9 @@ Phần trăm tiêu chuẩn cho HŨ TỰ DO TÀI CHÍNH: 10%
 
 #### `HŨ SỐ 6: TỪ THIỆN`
 
-HŨ TỪ THIỆN là khoản tiền bạn sử dụng để làm từ thiện, giúp đỡ cộng đồng, người thân, bạn bè.
+HŨ TỪ THIỆN là khoản tiền bạn sử dụng để làm từ thiện, giúp đỡ cộng đồng, người thân, bạn bè. Hãy Cho Đi, Bạn Sẽ Nhận Được Nhiều Hơn Thế! 
 
 Phần trăm tiêu chuẩn cho HŨ TỪ THIỆN: 5%
-
-Hãy Cho Đi, Bạn Sẽ Nhận Được Nhiều Hơn Thế! 
 
 ### Tính năng
 
