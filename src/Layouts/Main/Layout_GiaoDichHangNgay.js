@@ -30,8 +30,8 @@ const GiaoDich = ({ props_giaodich }) => {
             </div>
             <div className="col-sm-4">
                 <Row>
-                    <span className="text-info col-sm-6 text-end">{ props_giaodich.quyChiTieu === "" && props_giaodich.theLoai === "" && FormatSoTien(props_giaodich.soTien)}</span>
-                    <span className="text-danger col-sm-6">{props_giaodich.quyChiTieu !== "" && props_giaodich.theLoai !== "" && FormatSoTien(props_giaodich.soTien)}</span>
+                    <span className="text-info col-sm-6 text-end">{ props_giaodich.quyTaiChinh === "" && props_giaodich.theLoai === "" && FormatSoTien(props_giaodich.soTien)}</span>
+                    <span className="text-danger col-sm-6">{props_giaodich.quyTaiChinh !== "" && props_giaodich.theLoai !== "" && FormatSoTien(props_giaodich.soTien)}</span>
                 </Row>
             </div>
         </Row>

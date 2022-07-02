@@ -4,7 +4,7 @@ const AddGiaoDich = (cacGiaoDich, form) => {
     const ngay = form.date.split("T")[0]
     const myGiaoDich = {
         thoiGian: form.date.split("T")[1],
-        quyChiTieu: form.quyChiTieu,
+        quyTaiChinh: form.quyTaiChinh,
         theLoai: form.theLoai,
         soTien: form.soTien,
         moTa: form.moTa
@@ -67,7 +67,7 @@ function setGiaoDich(ngay, myGiaoDich){
         tongThuNhap: 0,
         tongChiTieu: myGiaoDich.soTien
     }
-    if (myGiaoDich.quyChiTieu === "" && myGiaoDich.theLoai === ""){
+    if (myGiaoDich.quyTaiChinh === "" && myGiaoDich.theLoai === ""){
         giaoDich.tongThuNhap = myGiaoDich.soTien
         giaoDich.tongChiTieu = 0
     }

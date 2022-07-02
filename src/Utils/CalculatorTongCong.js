@@ -5,7 +5,7 @@ const TongCongGiaoDichNgay = (cacGiaoDich, ngayGiaoDich) => {
     for (let i = 0; i < cacGiaoDich.length; i++) {
         if (cacGiaoDich[i].ngay === ngayGiaoDich) {
             for (let j = 0; j < cacGiaoDich[i].giaoDich.length; j++) {
-                if (cacGiaoDich[i].giaoDich[j].quyChiTieu === "" && cacGiaoDich[i].giaoDich[j].theLoai === ""){
+                if (cacGiaoDich[i].giaoDich[j].quyTaiChinh === "" && cacGiaoDich[i].giaoDich[j].theLoai === ""){
                     tongThuNhap += parseInt(cacGiaoDich[i].giaoDich[j].soTien)
                 } else {
                     tongChiTieu += parseInt(cacGiaoDich[i].giaoDich[j].soTien)

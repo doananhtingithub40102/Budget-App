@@ -40,18 +40,21 @@ const FormThuChi = () => {
                     <span className="text-danger errorNgay"></span>
                 </Col>
             </Form.Group>
-            <Form.Group as={Row} className="mb-3 quyChiTieu" hidden={hidden}>
-                <Form.Label column sm="3" className="labelQuyChiTieu">
-                    Quỹ chi tiêu
+            <Form.Group as={Row} className="mb-3 quyTaiChinh" hidden={hidden}>
+                <Form.Label column sm="3" className="labelQuyTaiChinh">
+                    Quỹ tài chính
                 </Form.Label>
                 <Col sm="9">
-                    <Form.Select value={form.quyChiTieu} className="selectQuyChiTieu" name="quyChiTieu" onChange={handleForm}>
-                        <option value="">Quỹ chi tiêu</option>
+                    <Form.Select value={form.quyTaiChinh} className="selectQuyTaiChinh" name="quyTaiChinh" onChange={handleForm}>
+                        <option value="">Quỹ tài chính</option>
                         <option value="Thiết yếu">Thiết yếu</option>
                         <option value="Hưởng thụ">Hưởng thụ</option>
                         <option value="Giáo dục">Giáo dục</option>
+                        <option value="Tiết kiệm dài hạn">Tiết kiệm dài hạn</option>
+                        <option value="Tự do tài chính">Tự do tài chính</option>
+                        <option value="Từ thiện">Từ thiện</option>
                     </Form.Select>
-                    <span className="text-danger errorQuyChiTieu"></span>
+                    <span className="text-danger errorQuyTaiChinh"></span>
                 </Col>
             </Form.Group>
             <Form.Group as={Row} className="mb-3 theLoai" hidden={hidden}>

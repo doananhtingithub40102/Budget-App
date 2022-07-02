@@ -45,6 +45,10 @@ main nav li:hover {
     transform: scale(0.65);
 }
 
+.giaoDich:hover{
+    cursor: pointer;
+}
+
 .modal-header .modal-title {
     color: #49438d;
 }
@@ -74,7 +78,7 @@ main nav li:hover {
     color: #f97a7a;
 }
 
-.modal-body .labelQuyChiTieu {
+.modal-body .labelQuyTaiChinh {
     color: #f97a7a;
 }
 

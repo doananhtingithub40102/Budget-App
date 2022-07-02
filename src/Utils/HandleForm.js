@@ -35,12 +35,12 @@ function xuLiDuLieuMoTa(moTa){
 }
 
 function xuLiSelectQuyChiTieu(){
-    if ($(".quyChiTieu").attr("hidden") === undefined){
-        if ($(".selectQuyChiTieu").val() === ""){
-            $(".errorQuyChiTieu").text("Vui lòng chọn quỹ chi tiêu")
+    if ($(".quyTaiChinh").attr("hidden") === undefined){
+        if ($(".selectQuyTaiChinh").val() === ""){
+            $(".errorQuyTaiChinh").text("Vui lòng chọn quỹ tài chính")
             return false
         }
-        $(".errorQuyChiTieu").text("")
+        $(".errorQuyTaiChinh").text("")
     }
 
     return true

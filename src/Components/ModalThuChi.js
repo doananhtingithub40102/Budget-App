@@ -32,26 +32,26 @@ const ModalThuChi = () => {
         if (!kiemTraDuLieuHopLe(form)) {
             return
         }
-        if ($(".quyChiTieu").attr("hidden") === "hidden"){
-            form.quyChiTieu = ""
+        if ($(".quyTaiChinh").attr("hidden") === "hidden"){
+            form.quyTaiChinh = ""
             form.theLoai = ""
         }
         setCacGiaoDich(AddGiaoDich(cacGiaoDich, form))
-        setShow(false)
+        handleClose()
     }
     const handleTiepTuc = () => {
         if (!kiemTraDuLieuHopLe(form)) {
             return
         }
-        if ($(".quyChiTieu").attr("hidden") === "hidden"){
-            form.quyChiTieu = ""
+        if ($(".quyTaiChinh").attr("hidden") === "hidden"){
+            form.quyTaiChinh = ""
             form.theLoai = ""
         }
         setCacGiaoDich(AddGiaoDich(cacGiaoDich, form))
-        setShow(false)
+        handleClose()
 
         const timer = setTimeout(() => {
-            setShow(true)
+            handleShow()
             clearTimeout(timer);
         }, 1000);
     }
@@ -60,14 +60,14 @@ const ModalThuChi = () => {
 
     let [form, setForm] = useState({
         date: dateValue,
-        quyChiTieu: "",
+        quyTaiChinh: "",
         theLoai: "",
         soTien: 0,
         moTa: "",
     })
     const handleForm = (e) => {
         const { name, value } = e.target
-        if (name === "quyChiTieu" && value === "") {
+        if (name === "quyTaiChinh" && value === "") {
             $(".optionEmptyTheLoai").removeAttr("hidden")
             setCacTheLoai([])
             setForm({ ...form, [name]: value, theLoai: "" })
@@ -86,8 +86,26 @@ const ModalThuChi = () => {
             return
         }
         if (value === "Giáo dục") {
-            setCacTheLoai(["Photo", "Mua sách/tài liệu"])
+            setCacTheLoai(["Photo", "Mua sách/tài liệu", "Khóa học"])
             setForm({ ...form, [name]: value, theLoai: "Photo" })
+            $(".optionEmptyTheLoai").attr("hidden", "hidden")
+            return
+        }
+        if (value === "Tiết kiệm dài hạn") {
+            setCacTheLoai(["Tiết kiệm dài hạn"])
+            setForm({ ...form, [name]: value, theLoai: "Tiết kiệm dài hạn" })
+            $(".optionEmptyTheLoai").attr("hidden", "hidden")
+            return
+        }
+        if (value === "Tự do tài chính") {
+            setCacTheLoai(["Gửi tiết kiệm", "Đầu tư", "Góp vốn kinh doanh"])
+            setForm({ ...form, [name]: value, theLoai: "Gửi tiết kiệm" })
+            $(".optionEmptyTheLoai").attr("hidden", "hidden")
+            return
+        }
+        if (value === "Từ thiện") {
+            setCacTheLoai(["Mua đồ cho người khó khăn", "Cho tiền", "Tặng quà"])
+            setForm({ ...form, [name]: value, theLoai: "Mua đồ cho người khó khăn" })
             $(".optionEmptyTheLoai").attr("hidden", "hidden")
             return
         }
@@ -96,7 +114,7 @@ const ModalThuChi = () => {
 
     useEffect(() => {
         if (show) {
-            if ($(".selectQuyChiTieu").val() !== ""){
+            if ($(".selectQuyTaiChinh").val() !== ""){
                 $(".optionEmptyTheLoai").attr("hidden", "hidden")
             } else {
                 $(".optionEmptyTheLoai").removeAttr("hidden")

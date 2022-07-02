@@ -33,7 +33,7 @@ const DateFormat = () => {
 
 const ThangNamFormat = () => {
     const dHienTai = new Date()
-    const thangHienTai = dHienTai.getMonth() + 1
+    const thangHienTai = dHienTai.getMonth() + 1 - 2
     const namHienTai = dHienTai.getFullYear()
 
     return [thangHienTai, namHienTai]
