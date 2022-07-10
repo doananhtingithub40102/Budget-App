@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Budget-App/static/css/main.786b730f.css",
-    "main.js": "/Budget-App/static/js/main.8d8d48a0.js",
+    "main.js": "/Budget-App/static/js/main.ef2274fb.js",
     "static/media/huTaiChinhIcon.png": "/Budget-App/static/media/huTaiChinhIcon.dc35e4795ccb5aa7c973.png",
     "static/media/thongBaoIcon.jpg": "/Budget-App/static/media/thongBaoIcon.b7bcf68fd6dbe1ec1769.jpg",
     "static/media/thongKeIcon.png": "/Budget-App/static/media/thongKeIcon.5e268564b4a682f2cb26.png",
@@ -11,10 +11,10 @@
     "static/media/caiDatIcon.png": "/Budget-App/static/media/caiDatIcon.2e3a26044ce464c31e84.png",
     "index.html": "/Budget-App/index.html",
     "main.786b730f.css.map": "/Budget-App/static/css/main.786b730f.css.map",
-    "main.8d8d48a0.js.map": "/Budget-App/static/js/main.8d8d48a0.js.map"
+    "main.ef2274fb.js.map": "/Budget-App/static/js/main.ef2274fb.js.map"
   },
   "entrypoints": [
     "static/css/main.786b730f.css",
-    "static/js/main.8d8d48a0.js"
+    "static/js/main.ef2274fb.js"
   ]
 }
