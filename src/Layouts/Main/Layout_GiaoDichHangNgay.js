@@ -21,7 +21,7 @@ const HeaderGiaoDich = ({ props_header }) => {
 
 const GiaoDich = ({ props_giaodich }) => {
     return (
-        <Row className="mt-2 mx-2">
+        <Row className="mt-2 mx-2 giaoDich">
             <div className="col-sm-4">
                 <span className="text-white-50">{props_giaodich.theLoai}</span>
             </div>

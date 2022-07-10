@@ -90,4 +90,10 @@ const NgayThangNam = (myDate) => {
     return date
 }
 
-export { DateFormat, ThangNamFormat, ArrDateValueFormat, DayOfWeek, NgayThangNam }
+const NamThangNgay = (myDate) => {
+    const arrDate = myDate.split("/")
+    const date = arrDate[2] + "-" + arrDate[1] + "-" + arrDate[0]
+    return date
+}
+
+export { DateFormat, ThangNamFormat, ArrDateValueFormat, DayOfWeek, NgayThangNam, NamThangNgay }
