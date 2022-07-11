@@ -1,10 +1,11 @@
 # Budget App
 
-Budget App - Ứng dụng quản lý tài chính cá nhân. Dự án được khởi tạo bằng [Create React App](https://github.com/facebook/create-react-app), một môi trường cho việc phát triển ứng dụng React (thư viện Javascript).
+Budget App - Ứng dụng quản lý tài chính cá nhân. Được khởi tạo bằng [Create React App](https://github.com/facebook/create-react-app), một môi trường cho việc phát triển ứng dụng React (thư viện Javascript).
 
-## Các tính năng đã có
-
-
+## Mục lục
+- [ Thông tin ứng dụng ](#thông-tin-về-ứng-dụng-này)
+- [ Kiến thức học được ](#kiến-thức-học-được-từ-ứng-dụng)
+- [ Demo ](#demo)
 
 ## Thông tin về ứng dụng này
 
@@ -47,6 +48,15 @@ Phần trăm tiêu chuẩn cho HŨ TỰ DO TÀI CHÍNH: 10%
 HŨ TỪ THIỆN là khoản tiền bạn sử dụng để làm từ thiện, giúp đỡ cộng đồng, người thân, bạn bè.
 
 Phần trăm tiêu chuẩn cho HŨ TỪ THIỆN: 5%
+
+### Các tính năng
+
+- tính năng 1
+- tính năng 2
+
+## Kiến thức học được từ ứng dụng
+
+
 
 ## Demo
 [ Budget App ](https://doananhtingithub40102.github.io/Budget-App/)
