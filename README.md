@@ -56,7 +56,25 @@ Phần trăm tiêu chuẩn cho HŨ TỪ THIỆN: 5%
 
 ## Kiến thức học được từ ứng dụng
 
+### React là gì?
 
+React là 1 thư viện Javascript cho việc xây dựng giao diện người dùng.
+
+Nó cho phép bạn thực hiện các UI phức tạp từ các đoạn code được chia thành các phần nhỏ, độc lập, có thể tái sử dụng lại và chúng được được gọi là các ``component``
+
+Một ``component`` sẽ nhận dữ liệu từ các tham số được gọi là ``props`` (viết tắt từ properties). Các ``component`` con có thể nhận ``props`` từ ``component`` cha
+
+Phương thức ``render`` trả về 1 mô tả (các thẻ HTML hay các component) chứa những gì mà ta muốn hiển thị trên màn hình
+
+Khi dữ liệu từ ``props`` thay đổi, React sẽ cập nhật và hiển thị lại các thẻ HTML hay các component
+
+### Tạo tương tác các thành phần
+
+Xử lý các sự kiện tương tác từ người dùng. Ví dụ:
+
+```
+<button onClick={() => console.log("click")}>Click me</button>
+```
 
 ## Demo
 [ Budget App ](https://doananhtingithub40102.github.io/Budget-App/)
