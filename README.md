@@ -2,14 +2,6 @@
 
 Budget App - Ứng dụng quản lý tài chính cá nhân. Dự án được khởi tạo bằng [Create React App](https://github.com/facebook/create-react-app), một môi trường cho việc phát triển ứng dụng React (thư viện Javascript).
 
-## 🛠 Các kỹ thuật Javascript
-
-- JS Regular Expressions
-- JS HTML DOM
-- JS Objects/ Classes
-- JS JSON
-- JS Web APIs - Web Storage API
-
 ## Các tính năng đã có
 
 
