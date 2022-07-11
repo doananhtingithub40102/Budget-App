@@ -125,6 +125,12 @@ const ModalThuChi = () => {
         setForm({ ...form, [name]: value })
     }
 
+    const [title, setTitle] = useState("Thêm giao dịch")
+    const [textBtn, setTextBtn] = useState({
+        "btn1": "Lưu",
+        "btn2": "Tiếp tục"
+    })
+
     useEffect(() => {
         if (show) {
             if ($(".selectQuyTaiChinh").val() !== "") {
@@ -134,16 +140,22 @@ const ModalThuChi = () => {
             }
         }
     }, [show])
-    
+
     useEffect(() => {
         $(".giaoDich").click(function () {
+            setTitle("Thông tin giao dịch")
+            setTextBtn({
+                "btn1": "Cập nhật",
+                "btn2": "Xóa"
+            })
+
             let ngay = $(this)[0].parentElement.innerText.slice(2, 12)
             ngay = NamThangNgay(ngay)
             const childNodes = $(this)[0].parentElement.childNodes
             const children = $(this)[0]
             const index = Array.prototype.indexOf.call(childNodes, children) - 1
-            for (let i = 0; i < cacGiaoDich.length; i++){
-                if (ngay === cacGiaoDich[i].ngay){
+            for (let i = 0; i < cacGiaoDich.length; i++) {
+                if (ngay === cacGiaoDich[i].ngay) {
                     form.date = ngay + "T" + cacGiaoDich[i].giaoDich[index].thoiGian
                     form.quyTaiChinh = cacGiaoDich[i].giaoDich[index].quyTaiChinh
                     if (form.quyTaiChinh === "") {
@@ -151,11 +163,11 @@ const ModalThuChi = () => {
                     }
                     if (form.quyTaiChinh === "Thiết yếu") {
                         setCacTheLoai(["Ăn uống", "Tiền trọ", "Đồ dùng sinh hoạt", "Giao thông vận tải", "Sim", "Bank", "Ổ khóa", "Làm đẹp", "Sức khỏe"])
-    
+
                     }
                     if (form.quyTaiChinh === "Hưởng thụ") {
                         setCacTheLoai(["Ăn uống", "Giặt sấy đồ", "Giải trí", "Làm đẹp", "Áo quần", "Sức khỏe"])
-    
+
                     }
                     if (form.quyTaiChinh === "Giáo dục") {
                         setCacTheLoai(["Photo", "Mua sách/tài liệu", "Khóa học"])
@@ -176,12 +188,18 @@ const ModalThuChi = () => {
                 }
             }
             handleShow()
-            if (form.quyTaiChinh === ""){
-                $(document).ready(function(){
+            if (form.quyTaiChinh === "") {
+                $(document).ready(function () {
+                    $("[data-rr-ui-event-key~=thuNhap]").prop("disabled", false)
+                    $("[data-rr-ui-event-key~=chiTieu]").prop("disabled", true)
+
                     $("[data-rr-ui-event-key~=thuNhap]").trigger("click")
                 })
             } else {
-                $(document).ready(function(){
+                $(document).ready(function () {
+                    $("[data-rr-ui-event-key~=thuNhap]").prop("disabled", true)
+                    $("[data-rr-ui-event-key~=chiTieu]").prop("disabled", false)
+
                     $("[data-rr-ui-event-key~=chiTieu]").trigger("click")
                 })
             }
@@ -192,22 +210,22 @@ const ModalThuChi = () => {
     return (
         <ModalContext.Provider value={{ form, handleForm }}>
             <TheLoaiContext.Provider value={cacTheLoai}>
-                <Button className="add rounded-circle py-5 position-fixed" onClick={handleShow}>
+                <Button className="add rounded-circle py-5 position-fixed" onClick={() => { setTitle("Thêm giao dịch"); setTextBtn({"btn1": "Lưu", "btn2": "Tiếp tục"}); handleShow() }}>
                     <img src={btnThem} alt="add" />
                 </Button>
                 <Modal show={show} onHide={handleClose}>
                     <Modal.Header closeButton>
-                        <Modal.Title>Thêm giao dịch</Modal.Title>
+                        <Modal.Title>{title}</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <TabsThuChi />
                     </Modal.Body>
                     <Modal.Footer>
                         <Button variant="secondary" id="btnLuu" onClick={handleLuu}>
-                            Lưu
+                            {textBtn.btn1}
                         </Button>
                         <Button variant="outline-dark" id="btnTiepTuc" onClick={handleTiepTuc}>
-                            Tiếp tục
+                            {textBtn.btn2}
                         </Button>
                     </Modal.Footer>
                 </Modal>

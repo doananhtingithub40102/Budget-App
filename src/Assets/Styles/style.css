@@ -86,6 +86,10 @@ main nav li:hover {
     color: #f97a7a;
 }
 
+.modal-footer {
+    justify-content: flex-start;
+}
+
 .modal-footer #btnLuu {
     width: 78%;
     background-color: rgb(61, 60, 100);
