@@ -1,6 +1,18 @@
-# Budget App - Ứng dụng quản lý tài chính
+# Budget App
 
-*Dự án này được khởi tạo bằng [Create React App](https://github.com/facebook/create-react-app)*.
+Budget App - Ứng dụng quản lý tài chính cá nhân. Dự án được khởi tạo bằng [Create React App](https://github.com/facebook/create-react-app), một môi trường cho việc phát triển ứng dụng React (thư viện Javascript).
+
+## 🛠 Các kỹ thuật Javascript
+
+- JS Regular Expressions
+- JS HTML DOM
+- JS Objects/ Classes
+- JS JSON
+- JS Web APIs - Web Storage API
+
+## Các tính năng đã có
+
+
 
 ## Thông tin về ứng dụng này
 
@@ -44,34 +56,5 @@ HŨ TỪ THIỆN là khoản tiền bạn sử dụng để làm từ thiện, g
 
 Phần trăm tiêu chuẩn cho HŨ TỪ THIỆN: 5%
 
-### Tính năng
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Demo
+[ Budget App ](https://doananhtingithub40102.github.io/Budget-App/)
