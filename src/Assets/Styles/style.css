@@ -30,7 +30,95 @@ main nav li:hover {
     border-bottom: 2px solid #ff55c5;
 }
 
-.noGiaoDich{
+main .soDuHuTaiChinh {
+    width: 300px;
+    background-image: linear-gradient(to right, #744bb0, violet, #c664ea, indigo);
+    border-radius: 15px;
+    color: white;
+    max-width: 90%;
+}
+
+main .soDuCacHu {
+    border-radius: 15px;
+    width: 500px;
+    background-color: #3d3c64;
+    max-width: 93%;
+}
+
+main .soDuCacHu .huIcon {
+    border-radius: 15px;
+    color: white;
+    height: 40px;
+    width: 40px;
+    font-size: 19px;
+    padding-top: 3px;
+    padding-left: 11px;
+}
+
+.dropdown-menu{
+    background-color: #3d3c64;
+    width: 100%;
+}
+
+.dropdown-item{
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.dropdown-item:hover {
+    background-color: #1d1c44;
+}
+
+.dropdown-item:focus {
+    background-color: black;
+}
+
+main .dropdownHu {
+    width: 450px;
+}
+
+main .soDuCacHu .loaiHu {
+    color: white;
+}
+
+main .soDuCacHu .soDuHu {
+    color: #c657f9;
+}
+
+main .huIcon1 {
+    background-color: #eb4c60;
+}
+
+main .huIcon2 {
+    background-color: #1992fe;
+}
+
+main .huIcon3 {
+    background-color: #ff54c6;
+}
+
+main .huIcon4 {
+    background-color: #48dc28;
+}
+
+main .huIcon5 {
+    background-color: #17f4e3;
+}
+
+main .huIcon6 {
+    background-color: #fdbe01;
+}
+
+main .soDuHuTaiChinh .soDu {
+    font-size: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.dropdown-toggle::after {
+    display: none !important;
+}
+
+.noGiaoDich {
     color: white;
     margin-left: 15px;
     font-size: 20px;
@@ -45,7 +133,7 @@ main nav li:hover {
     transform: scale(0.65);
 }
 
-.giaoDich:hover{
+.giaoDich:hover {
     cursor: pointer;
 }
 
@@ -115,13 +203,6 @@ main nav li:hover {
         ;
     }
 }
-
-/* @media only screen and (max-width: 767px) {
-    .content .col-md-6:nth-child(2){
-        padding-left: calc(var(--bs-gutter-x) * .5);
-    }
-} */
-
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
