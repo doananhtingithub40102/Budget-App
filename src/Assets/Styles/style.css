@@ -30,6 +30,10 @@ main nav li:hover {
     border-bottom: 2px solid #ff55c5;
 }
 
+main .huHover:hover{
+    cursor: pointer;
+}
+
 main .soDuHuTaiChinh {
     width: 300px;
     background-image: linear-gradient(to right, #744bb0, violet, #c664ea, indigo);
@@ -40,9 +44,12 @@ main .soDuHuTaiChinh {
 
 main .soDuCacHu {
     border-radius: 15px;
-    width: 500px;
+    width: 530px;
     background-color: #3d3c64;
     max-width: 93%;
+    max-height: 430px;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 main .soDuCacHu .huIcon {
@@ -53,6 +60,46 @@ main .soDuCacHu .huIcon {
     font-size: 19px;
     padding-top: 3px;
     padding-left: 11px;
+}
+
+.captionCacHu{
+    background-color: #505074;
+    border-radius: 15px;
+    padding: 15px 10px;
+    margin: 5px;
+}
+
+.divColor{
+    width: 18px;
+    height: 18px;
+    background-color: yellow;
+    display: inline-block;
+    margin-right: 5px;
+    border-radius: 7px;
+}
+
+main #divColor1 {
+    background-color: #eb4c60;
+}
+
+main #divColor2 {
+    background-color: #1992fe;
+}
+
+main #divColor3 {
+    background-color: #ff54c6;
+}
+
+main #divColor4 {
+    background-color: #48dc28;
+}
+
+main #divColor5 {
+    background-color: #17f4e3;
+}
+
+main #divColor6 {
+    background-color: #fdbe01;
 }
 
 .dropdown-menu{
@@ -71,6 +118,15 @@ main .soDuCacHu .huIcon {
 
 .dropdown-item:focus {
     background-color: black;
+}
+
+.react-datepicker__input-container input{
+    color: white;
+    background-color: #1d1c44;
+    width: 90%;
+    border: none;
+    border-radius: 15px;
+    padding: 10px 15px;
 }
 
 main .dropdownHu {
