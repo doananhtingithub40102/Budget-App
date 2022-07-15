@@ -30,4 +30,30 @@ const TongCongGiaoDichThang = (cacGiaoDichThangNam) => {
     return [tongThuNhap, tongChiTieu]
 }
 
-export { TongCongGiaoDichNgay, TongCongGiaoDichThang }
+const TongCongTaiChinh = (cacGiaoDich) => {
+    let tongThuNhap = 0
+    let tongChiTieu = 0
+
+    for (let i = 0; i < cacGiaoDich.length; i++) {
+        tongThuNhap += parseInt(cacGiaoDich[i].tongThuNhap)
+        tongChiTieu += parseInt(cacGiaoDich[i].tongChiTieu)
+    }
+
+    return [tongThuNhap, tongChiTieu]
+}
+
+const TongChiTieuTheoHu = (cacGiaoDich, huTaiChinh) => {
+    let tongChiTieu = 0
+
+    for (let i = 0; i < cacGiaoDich.length; i++) {
+        for (let j = 0; j < cacGiaoDich[i].giaoDich.length; j++) {
+            if (cacGiaoDich[i].giaoDich[j].quyTaiChinh === huTaiChinh) {
+                tongChiTieu += parseInt(cacGiaoDich[i].giaoDich[j].soTien)
+            }
+        }
+    }
+
+    return tongChiTieu
+}
+
+export { TongCongGiaoDichNgay, TongCongGiaoDichThang, TongCongTaiChinh, TongChiTieuTheoHu }
