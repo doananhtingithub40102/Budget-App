@@ -49,11 +49,6 @@ GIVE JAR is the money you use to do charity, help the community, relatives, frie
 
 The GIVE JAR takes up 5% of your total income.
 
-### Features
-
-- Feature 1
-- Feature 2
-
 ## Acquired knowledge
 
 ### What Is React?
